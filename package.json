@@ -28,7 +28,9 @@
 		"update-actions": "pin-github-action ./.github/workflows/website.yml",
 		"watch": "tsc -w -p ./src",
 		"build": "ts-node ./build/build-languages",
-		"build-monaco-editor": "npm run build && ts-node ./build/build-monaco-editor"
+		"build-monaco-editor": "npm run build && ts-node ./build/build-monaco-editor",
+		"predeploy" : "npm run build",
+		"deploy" : "gh-pages -d build"
 	},
 	"typings": "./esm/vs/editor/editor.api.d.ts",
 	"module": "./esm/vs/editor/editor.main.js",
@@ -46,6 +48,7 @@
 		"esbuild": "^0.20.0",
 		"esbuild-plugin-alias": "^0.2.1",
 		"file-loader": "^6.2.0",
+		"gh-pages": "^6.1.1",
 		"glob": "^7.2.0",
 		"http-server": "^14.1.1",
 		"husky": "^7.0.4",
